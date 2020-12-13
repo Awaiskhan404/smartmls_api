@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SmartMls APIs</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+      *{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+    background: rgb(255,255,255);
+    overflow-x: hidden;
+}
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+}
+
+
+    </style>
+  </head>
+  <body>
+      <nav style="background-color:#0066a1;">
+        <div class="nav-wrapper container">
+          <img class="brand-logo" style="width:300px;padding-top:10px;" src="https://edu.smartmls.com/wp-content/uploads/2019/12/SmartMLS-logo-white-and-black.png" alt="">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="https://data.ct.gov/Business/Real-Estate-Salespersons-with-Associated-Broker/6tja-6vdt">CT Data</a></li>
+            <li><a href="https://data.ct.gov/Business/Real-Estate-Salespersons-with-Associated-Broker/6tja-6vdt">API</a></li>
+            <li><a href="https://awaiskhan.com.pk">Developer</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+        <h2>SMARTMLS API DATA</h2>
+
+
+
+<div class="container">
+
+    <div class="container">
+
+      <!-- <form class="form_search" action="https://data.ct.gov/resource/6tja-6vdt.json" method="get">
+        <input type="text" name="" placeholder="   search" value="" style="background-color:#324960;border:solid;border-radius:30px;border-color: #324960;color:white;text-align: center;outline:none;">
+
+      </form> -->
+
+      </div>
+
+    </div>
+
+</div>
+<div class="container"  style="margin-left:35%; padding-bottom:50px;">
+
+
+  <form method="post" action="/upload" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="myfile">
+    <button type="submit" class="btn btn-success btn-rounded">Upload</button>
+
+  </form>
+
+  {% if uploaded_file_url %}
+    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+    <p>File Dowonload at: <a href="{{ download_url }}">{{ download_url }}</a></p>
+  {% endif %}
+  <!-- <p><a href="#">Return to Home</a></p> -->
+</div>
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>REAL-ESTATE-SALESPERSON</th>
+            <th>SALESPERSONCREDENTIAL</th>
+            <th>REAL-ESTATE-BROKER</th>
+            <th>BROKER-CREDENTIAL</th>
+            <!-- <th>Header 5</th> -->
+        </tr>
+        </thead>
+        <tbody>
+           {% for row in data_list %}
+      <tr>
+            <td>{{row.0}}</td>
+            <td>{{row.1}}</td>
+            <td>{{row.2}}</td>
+            <td>{{row.3}}</td>
+
+        </tr>
+         {% endfor %}
+        <tbody>
+    </table>
+</div>
+
+  <footer class="page-footer" style="background-color:#0066a1; margin-top:10%">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text"></h5>
+          <p class="grey-text text-lighten-4"></p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text"></h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+            <li><a class="grey-text text-lighten-3" href="#!"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2020 SMARTMLS. All rights reserved
+      <a class="grey-text text-lighten-4 right" href="https://smartmls.com">Smartmls</a>
+      </div>
+    </div>
+  </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+  </body>
+</html>
