@@ -17,9 +17,11 @@ def simple_upload(request):
         uploaded_file_url = fs.url(filename)
         file_path="http://127.0.0.1:8000"+uploaded_file_url
         df2=pd.read_csv(file_path)
-        r = requests.get('https://data.ct.gov/resource/6tja-6vdt.json')
+        # df=pd.read_csv('media/6tja-6vdt.csv')
+        r = requests.get('https://data.ct.gov/resource/6tja-6vdt.json?$limit=19000&$$app_token=utb5TunA6LowgPa1G5vfHTvBQ')
         df = pd.DataFrame(r.json())
         a=df['salespersoncredential'].values.tolist()
+        print(a)
         b=df2['salespersoncredential'].values.tolist()
         c=[]
         for x in a:
