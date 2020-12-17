@@ -201,6 +201,7 @@ h2{
   {% if uploaded_file_url %}
     <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
     <p>File Dowonload at: <a href="{{ download_url }}">{{ download_url }}</a></p>
+    <p>File Dowonload at: <a href="{{ not_found_url }}">{{ not_found_url }}</a></p>
   {% endif %}
   <!-- <p><a href="#">Return to Home</a></p> -->
 </div>
@@ -226,6 +227,35 @@ h2{
 
         </tr>
          {% endfor %}
+        <tbody>
+    </table>
+</div>
+<br>
+
+    
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+
+        <tr>
+            <th>REAL-ESTATE-SALESPERSON</th>
+            <th>SALESPERSONCREDENTIAL</th>
+            <th>REAL-ESTATE-BROKER</th>
+            <th>BROKER-CREDENTIAL</th>
+            <!-- <th>Header 5</th> -->
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in not_found_data_list %}
+      <tr>
+            <td>{{row.0}}</td>
+            <td>{{row.1}}</td>
+            <td>Not Found</td>
+            <td>Not Found</td>
+
+        </tr>
+           {% endfor %}
         <tbody>
     </table>
 </div>

@@ -21,9 +21,11 @@ def simple_upload(request):
         r = requests.get('https://data.ct.gov/resource/6tja-6vdt.json?$limit=19000&$$app_token=utb5TunA6LowgPa1G5vfHTvBQ')
         df = pd.DataFrame(r.json())
         a=df['salespersoncredential'].values.tolist()
-        print(a)
         b=df2['salespersoncredential'].values.tolist()
+        # name=df2['real_estate_salesperson'].values.tolist()
         c=[]
+        d=[]
+        e=[]
         for x in a:
             if x in b:
                 c.append(True)
@@ -31,14 +33,29 @@ def simple_upload(request):
                 c.append(False)
         present=pd.Series(c)
         df3=df[present]
+        df3_list=df3['salespersoncredential'].values.tolist()
+        for y in b:
+            if y in df3_list:
+                d.append(False)
+            else:
+                d.append(True)
+        not_found=pd.Series(d)
+        df4=df2[not_found]
+        df4.to_csv('media/not_found.csv')
+        print(df4)
+        print(df3)
         df3.to_csv('media/finally.csv')
         data_list=list(df3.values.tolist())
+        not_found_data_list=list(df4.values.tolist())
         download_url="media/finally.csv"
-        print(df[present])
+        not_found_url="media/not_found.csv"
+        # print(df[present])
         return render(request, 'index.html', {
             'uploaded_file_url': uploaded_file_url,
             'data_list':data_list,
-            'download_url':download_url
+            'not_found_data_list':not_found_data_list,
+            'download_url':download_url,
+            'not_found_url':not_found_url
         })
     return render(request, 'index.html')
 def process_api(request):
